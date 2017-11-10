@@ -25,8 +25,6 @@ public class LeetCode_10 {
             }else {
                 ret =  ret||match(s,p,i+1,j+1);
             }
-        }else {
-            return ret;
         }
         return ret;
     }
