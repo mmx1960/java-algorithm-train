@@ -1,4 +1,8 @@
 /**
+ * 仿redis思想，按照redis dict 实现自己的hashmap
+ * 去除了原生的Java hashmap一些接口封装，只为实现功能
+ * 目前实现了自动扩容和渐进式rehash
+ * 自动收缩待实现
  * @author Lenovo
  * @date 2017/11/9
  */
