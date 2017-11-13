@@ -78,6 +78,7 @@ public class MyHashMap<K,V> {
           }
           copyEntries();
           this.rehashidx = -1;
+
      }
 
      private void copyEntries() {
@@ -115,13 +116,13 @@ public class MyHashMap<K,V> {
           tmp.k = k;
           tmp.v = v;
           curr.next = tmp;
-          used++;
+          map.used++;
      }
 
 
      public V get(K k){
           //扩展&收缩处理
-          if((used/size)>THREAD_HOLD&&back!=null){
+          if((used/size)>=THREAD_HOLD&&back!=null){
                transToNewTable();
                V ret = getEntries(this, k);
                if (ret!= null){
