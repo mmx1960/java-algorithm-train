@@ -3,7 +3,7 @@
  * 去除了原生的Java hashmap一些接口封装，只为实现功能
  * 目前实现了自动扩容和渐进式rehash
  * 自动收缩待实现
- * @author Lenovo
+ * @author zzc
  * @date 2017/11/9
  */
 public class MyHashMap<K,V> {
@@ -158,7 +158,7 @@ public class MyHashMap<K,V> {
           V v;
           Entry<K,V> next;
           boolean hasNext(){
-               return next==null?false:true;
+               return next != null;
           }
 
 
