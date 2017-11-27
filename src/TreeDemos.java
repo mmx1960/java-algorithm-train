@@ -118,12 +118,19 @@ public class TreeDemos {
 
                     }else {
                         //以右节点为根中序遍历，找到后续节点
-                        middleNext(curr.right,curr);
-                        //如果是根节点
-                        if (curr == root){
-                            root = curr.right;
-                            break;
+                        Node<T> cnode = curr.right;
+                        Node<T> cparent = null;
+                        while (cnode.left != null){
+                            cparent =cnode;
+                            cnode = cnode.left;
                         }
+                        curr.value = cnode.value;
+                        if (cparent == null){
+                            curr.right = null;
+                        }else {
+                            cparent.left = null;
+                        }
+
 
                     }
                     break;
@@ -141,19 +148,7 @@ public class TreeDemos {
             return tmp;
 
         }
-        private void middleNext(Node<T> node,Node<T> curr){
-            if (node.left == null){
-                node.left = curr.left;
-                if (curr.right != node){
-                    node.right = curr.right;
-                }
-                return;
-            }
 
-            middleNext(node.left,curr);
-
-
-        }
 
         class Node<T>{
 
@@ -170,10 +165,12 @@ public class TreeDemos {
         BST<Integer> bstTree = new BST<>();
         bstTree.insert(3);
         bstTree.insert(2);
+        bstTree.insert(8);
         bstTree.insert(5);
-        bstTree.insert(6);
+        bstTree.insert(4);
         bstTree.insert(9);
-        bstTree.delete(9);
+        bstTree.insert(6);
+        bstTree.delete(5);
         System.out.println();
 
     }
