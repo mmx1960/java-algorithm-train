@@ -1,6 +1,6 @@
 /**
  * 树-数据结构集合
- * BTree 2017-11-26
+ * BSTTree 2017-11-26
  * @author zhangzc
  */
 public class TreeDemos {
